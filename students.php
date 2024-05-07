@@ -20,14 +20,15 @@
         $data['content'] .= "<form action='deletestudents.php' method='POST'>";
 
       // Prepare page content
-        $data['content'] .= "<table border='1'>";
+        $data['content'] .= "<table class='table table-bordered border-dark' >";
 
       // Display the table headings  
         $data['content'] .= "<tr><th>Student ID</th><th>First Name</th>
                             <th>Last Name</th><th>DOB</th>
                             <th>House</th><th>Town</th>
                             <th>County</th><th>Country</th>
-                            <th>Postcode</th><th>Profile Image</th></tr>";
+                            <th>Postcode</th><th>Profile Image</th>
+                            <th>X</th></tr>";
 
       // Display the students within the html table
         while($row = mysqli_fetch_array($result)) {
@@ -41,14 +42,14 @@
             $data['content'] .= "<td> {$row["county"]} </td>";
             $data['content'] .= "<td> {$row["country"]} </td>";
             $data['content'] .= "<td> {$row["postcode"]} </td>";
-//            $data['content'] .= "<td> {$row["profile_picture"]} </td>";
+            $data['content'] .= "<td> {$row["profile_picture"]} </td>";
             $data['content'] .= "<td> <input type='checkbox' name='students[]' value='$row[studentid]' ></td>";
             $data['content'] .= "</tr>";
         }
         $data['content'] .= "</table><br>";
 
       // Delete button  
-        $data['content'] .= "<input type='submit' name='deletebtn' value='Delete'/>";
+        $data['content'] .= "<input type='submit' class='btn btn-outline-danger' name='deletebtn' value='Delete'/>";
 
       // Close the form  
         $data['content'] .= "</form>";

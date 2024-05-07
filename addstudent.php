@@ -52,6 +52,7 @@ if (isset($_SESSION['id'])) {
     else {
       // using <<<EOD notation to allow building of a multi-line string
       // see http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
+      // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
         $data['content'] = <<<EOD
 
     <!-- HTML FORM -->
@@ -59,29 +60,29 @@ if (isset($_SESSION['id'])) {
     <form name="frmdetails" action="" method="post" enctype="multipart/form-data"">
 
     Student ID :
-    <input name="studentid" type="text" value=""  /><br><br/>
+    <input name="studentid" type="text" value="" class="form-control" />
     Password :
-    <input name="password" type="password" value=""  /><br><br/>
+    <input name="password" type="password" value="" class="form-control" />
     Date of Birth :
-    <input name="dob" type="date" value=""  /><br><br/>
+    <input name="dob" type="date" value="" class="form-control" />
     First Name :
-    <input name="firstname" type="text" value=""  /><br><br/>
+    <input name="firstname" type="text" value="" class="form-control" />
     Surname :
-    <input name="lastname" type="text"  value=""  /><br><br/>
+    <input name="lastname" type="text"  value="" class="form-control" />
     Number and Street :
-    <input name="house" type="text"  value=""  /><br><br/>
+    <input name="house" type="text"  value="" class="form-control" />
     Town :
-    <input name="town" type="text"  value=""  /><br><br/>
+    <input name="town" type="text"  value="" class="form-control" />
     County :
-    <input name="county" type="text"  value=""  /><br><br/>
+    <input name="county" type="text"  value="" class="form-control" />
     Country :
-    <input name="country" type="text"  value=""  /><br><br/>
+    <input name="country" type="text"  value="" class="form-control" />
     Postcode :
-    <input name="postcode" type="text"  value=""  /><br><br/>
+    <input name="postcode" type="text"  value="" class="form-control" />
     Profile Picture :
-    <input name="profile_picture" type="file" Value="" /><br><br>
+    <input name="profile_picture" type="file" Value="" class="form-control" />
 
-    <input type="submit" value="Save" name="submit"/>
+    <input type="submit" value="Save" name="submit" class="btn btn-outline-primary mb-3 mt-3"/>
     </form>
 
 EOD;
