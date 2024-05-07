@@ -3,5 +3,6 @@
    <a href="assignmodule.php" class="text-light">Assign Module</a> |
    <a href="details.php" class="text-light">My Details</a> |
    <a href="students.php" class="text-light">All Students</a> |
+   <a href="addstudent.php">Add Students</a> |
    <a href="logout.php" class="text-light">Logout</a>
 </div>
