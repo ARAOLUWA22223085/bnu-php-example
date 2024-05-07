@@ -30,20 +30,14 @@ if (isset($_SESSION['id'])) {
       // encrypts the user password data    
         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $image = $_FILES['profile_picture']['tmp_name'];
-
-        $imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
-        $studentid = $_POST['studentid'];
-
      // SQL query inserting a new student record  
         $sql = "INSERT INTO student (studentid, password, dob, firstname, 
-        lastname, house, town, county, country, postcode, profile_picture)
+        lastname, house, town, county, country, postcode)
         VALUES ('{$_POST['studentid']}', '$hashed_password', 
                 '{$_POST['dob']}', '{$_POST['firstname']}', 
                 '{$_POST['lastname']}', '{$_POST['house']}', 
                 '{$_POST['town']}', '{$_POST['county']}', 
-                '{$_POST['country']}','{$_POST['postcode']}',
-                '{$_POST['profile_picture']}')";
+                '{$_POST['country']}','{$_POST['postcode']}')";
 
              // Execute query  
                 $result = mysqli_query($conn,$sql);
@@ -62,32 +56,30 @@ if (isset($_SESSION['id'])) {
 
     <!-- HTML FORM -->
     <h2>Add New Student</h2>
-    <form name="frmdetails" action="" method="post" enctype="multipart/form-data"">
+    <form name="frmdetails" action="" method="post">
 
     Student ID :
-    <input name="studentid" type="text" value="" class="form-control" />
+    <input name="studentid" type="text" value=""  /><br/>
     Password :
-    <input name="password" type="password" value="" class="form-control" />
+    <input name="password" type="password" value=""  /><br/>
     Date of Birth :
-    <input name="dob" type="date" value="" class="form-control" />
+    <input name="dob" type="date" value=""  /><br/>
     First Name :
-    <input name="firstname" type="text" value="" class="form-control" />
+    <input name="firstname" type="text" value=""  /><br/>
     Surname :
-    <input name="lastname" type="text"  value="" class="form-control" />
+    <input name="lastname" type="text"  value=""  /><br/>
     Number and Street :
-    <input name="house" type="text"  value="" class="form-control" />
+    <input name="house" type="text"  value=""  /><br/>
     Town :
-    <input name="town" type="text"  value="" class="form-control" />
+    <input name="town" type="text"  value=""  /><br/>
     County :
-    <input name="county" type="text"  value="" class="form-control" />
+    <input name="county" type="text"  value=""  /><br/>
     Country :
-    <input name="country" type="text"  value="" class="form-control" />
+    <input name="country" type="text"  value=""  /><br/>
     Postcode :
-    <input name="postcode" type="text"  value="" class="form-control" />
-    Profile Picture :
-    <input name="profile_picture" type="file" Value="" class="form-control" />
+    <input name="postcode" type="text"  value=""  /><br/>
 
-    <input type="submit" value="Save" name="submit" class="btn btn-outline-primary mb-3 mt-3"/>
+    <input type="submit" value="Save" name="submit"/>
     </form>
 
 EOD;
