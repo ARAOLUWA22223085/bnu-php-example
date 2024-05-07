@@ -30,6 +30,11 @@ if (isset($_SESSION['id'])) {
       // encrypts the user password data    
         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+        $image = $_FILES['profile_picture']['tmp_name'];
+
+        $imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
+        $studentid = $_POST['studentid'];
+
      // SQL query inserting a new student record  
         $sql = "INSERT INTO student (studentid, password, dob, firstname, 
         lastname, house, town, county, country, postcode, profile_picture)
