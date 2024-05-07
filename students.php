@@ -27,9 +27,9 @@
                             <th>Last Name</th><th>DOB</th>
                             <th>House</th><th>Town</th>
                             <th>County</th><th>Country</th>
-                            <th>Postcode</th></tr>";
+                            <th>Postcode</th><th>Profile Image</th></tr>";
 
-      // Display the modules within the html table
+      // Display the students within the html table
         while($row = mysqli_fetch_array($result)) {
         $data['content'] .= "<tr>";
             $data['content'] .= "<td> {$row["studentid"]} </td>";
@@ -45,7 +45,7 @@
             $data['content'] .= "<td> <input type='checkbox' name='students[]' value='$row[studentid]' ></td>";
             $data['content'] .= "</tr>";
         }
-        $data['content'] .= "</table>";
+        $data['content'] .= "</table><br>";
 
       // Delete button  
         $data['content'] .= "<input type='submit' name='deletebtn' value='Delete'/>";
